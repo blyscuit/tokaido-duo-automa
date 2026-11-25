@@ -39,8 +39,8 @@ window.RULES = [
   { id: 'waves', title: 'Wave tiles', html: `
     <p>Like you, Automa gains a Wave tile when her Pilgrim lands on a Seashore:</p>
     <ol>
-      <li>If any Wave tiles remain on the game board, only those are valid. Otherwise <i>your</i> tiles are valid.</li>
-      <li>Among the valid tiles, Automa takes the tile whose Character has the <b>highest Rank</b> (tiebreaker: Pilgrim &gt; Merchant &gt; Artist) and places it on that Character card.</li>
+      <li>If there are any Wave tiles remaining on the game board, those are the only valid tiles. Otherwise, yours are valid.</li>
+      <li>Among the valid tiles, Automa gains the tile whose corresponding Character has the <b>highest Rank</b> (tiebreaker: Pilgrim &gt; Merchant &gt; Artist). Place the tile on that Character card as described below.</li>
     </ol>
     <p><b>Placing a Wave tile:</b> put it on the first space after the Rank token that has a Wave icon. If there is no such space, put it anywhere on the card outside the track.</p>
     <figure><img src="img/wave-placing.jpg" alt="Placing Wave tiles"><figcaption>Left: placing a tile after gaining it. Right: placing it again after the token advanced over it.</figcaption></figure>` },

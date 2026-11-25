@@ -81,6 +81,8 @@ img.photo{width:100%;border-radius:12px;border:1px solid var(--line);display:blo
 .wgain{font-size:.82rem;padding:6px;line-height:1.2}
 .wchip{background:#fff;border:2px solid var(--line);border-radius:12px;padding:6px 4px;text-align:center;font-size:.85rem;border-top:5px solid var(--c)}
 .wchip b{display:block}
+.wchip.user{background:var(--c);border-color:var(--c);color:#fff}
+.wchip.automa{background:color-mix(in srgb,var(--c) 14%,#fff);border-color:color-mix(in srgb,var(--c) 30%,#fff);color:var(--mute)}
 details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:14px}
 summary{cursor:pointer;font-weight:600}
 table.rk{width:100%;border-collapse:collapse;font-size:.9rem}

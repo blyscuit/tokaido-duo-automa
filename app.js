@@ -149,9 +149,9 @@
     h += '<div class="panel"><h3>Wave tiles</h3><div class="wavebar">' + CHARS.map((c) => {
       const w = g.wave[c];
       const t = w.loc === 'board' ? 'On the board' : w.loc === 'user' ? 'You have it' : (w.pos === 'off' ? 'Automa · beside card' : 'Automa · on track');
-      return '<button class="wchip" style="--c:' + COLORS[c] + '" data-act="wtoggle" data-c="' + c + '"' + (w.loc === 'automa' ? ' disabled' : '') + '><b>' + NAMES[c] + '</b>' + t + '</button>';
+      return '<button class="wchip ' + w.loc + '" style="--c:' + COLORS[c] + '" data-act="wtoggle" data-c="' + c + '"' + '><b>' + NAMES[c] + '</b>' + t + '</button>';
     }).join('') + '<button class="primary wgain" data-act="gain">🌊 Automa gains a Wave tile</button></div>' +
-      '<p class="small">Tap a tile when <b>you</b> take it from the board (tap again to undo). Press “Automa gains a Wave tile” when her Pilgrim lands on a Seashore.</p></div>';
+      '<p class="small">Tap a tile when <b>you</b> take it from the board (tap again to put it back). Tap a tile Automa holds to remove it from her card — “You have it”. Press “Automa gains a Wave tile” when her Pilgrim lands on a Seashore.</p></div>';
 
     CHARS.forEach((c) => {
       const d = card(c), pos = g.pos[c], last = d.nums.length - 1;
@@ -214,7 +214,7 @@
         toast(r.extra ? NAMES[c] + ' landed on a Wave tile: +1 extra space, tile placed again' : NAMES[c] + ' advances');
       });
     } else if (act === 'wtoggle') {
-      mutate(() => { const w = g.wave[c]; w.loc = w.loc === 'board' ? 'user' : w.loc === 'user' ? 'board' : w.loc; });
+      mutate(() => { const w = g.wave[c]; w.loc = w.loc === 'board' ? 'user' : w.loc === 'user' ? 'board' : 'user'; w.pos = null; });
     } else if (act === 'gain') {
       const probe = JSON.parse(JSON.stringify(g));
       const r = L.gainWave(probe, (x) => card(x));

@@ -1,4 +1,4 @@
-const CACHE = 'automa-v4';
+const CACHE = 'automa-v6';
 const ASSETS = [
   './', 'index.html', 'style.css', 'cards.js', 'rules.js', 'app.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png',
